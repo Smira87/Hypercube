@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
    
     
     
-    public float MoveSpd = 0.2f;
+    
     //AR
     public ARRaycastManager _RaycastManager;
     public ARPlaneManager _PlaneManager;
