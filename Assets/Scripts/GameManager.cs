@@ -15,25 +15,14 @@ public class GameManager : MonoBehaviour
 
     public Button _FlyButton;
     public Button _LandButton;
-
+    public  GameObject _Drone;
     
  
 
     public GameObject _Controls;
-    public Joystick joystick;
-    public Joystick joystick2;
-
-    Vector3 m_EulerAngleVelocity;
-    Vector3 m_EulerAngleVelocity2;
+    
    
     
-    public bool isMovingForward;
-     public bool isMovingBackward;
-    public bool isMovingRight;
-     public bool isMovingLeft;
-
-     public Vector3 LastPOS;
-     public Vector3 NextPOS;
     
     public float MoveSpd = 0.2f;
     //AR
@@ -41,8 +30,8 @@ public class GameManager : MonoBehaviour
     public ARPlaneManager _PlaneManager;
     List<ARRaycastHit> _HitRelult = new List<ARRaycastHit>();
 
-    public  GameObject _Drone;
-
+    
+    public HeliController heliControlls;
 
    
 
@@ -73,80 +62,22 @@ public class GameManager : MonoBehaviour
             UpdateAR();
         }
         if (_Controls.active){
-            Move();
+            heliControlls.Move();
             
           }
     }
     
     
    
-        void tilting() {
-            
-            if (joystick2.Horizontal > 0) {
-                isMovingRight = true;
-                isMovingLeft = false;
-                }
-            else if (joystick2.Horizontal < 0) {
-                isMovingLeft = true;
-                isMovingRight = false;
-                }
-            if (joystick2.Vertical < 0) {
-                isMovingBackward = true;
-               isMovingForward = false;
-                }
-            else if (joystick2.Vertical > 0) {
-            
-                isMovingForward = true;
-                isMovingBackward = false;
-
-                
-
-                }
-            if (joystick2.Vertical == 0) {
-                isMovingForward = false;
-                isMovingBackward = false;
-                }    
-            if ((joystick2.Horizontal) == 0) {
-                isMovingLeft = false;
-                isMovingRight = false;
-            }
-
-            if (isMovingForward) {
-                
-                 
-                }
-            if (isMovingBackward) {
-
-                
-                }    
         
-    }
          void LateUpdate() {
          
-        tilting();
+        heliControlls.tilting();
         
         
          
     }
-    void Move() {
-        //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
-        var newpos = rb.position - rb.transform.forward * joystick2.Horizontal * MoveSpd + rb.transform.right * joystick2.Vertical * MoveSpd + rb.transform.up * joystick.Vertical * MoveSpd;
-        rb.MovePosition (newpos);
-        
-        m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
-        
-        Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
-        
-        
-        rb.MoveRotation(rb.rotation * deltaRotation);
-        
-        
-   
- 
-    
-    //Debug.Log(m_EulerAngleVelocity);
-        
-    }
+
     void UpdateAR()
     {
         Vector2 positionScreenSpace = Camera.current.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
