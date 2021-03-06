@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject _Controls;
     
-   
+    public GameObject plane;
     
     
     
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        rb = _Drone.GetComponent<Rigidbody>();
+    
         
         _Controls.SetActive(false);
         _FlyButton.onClick.AddListener(EventOnClickFlyButton);
@@ -61,10 +61,11 @@ public class GameManager : MonoBehaviour
         {
             UpdateAR();
         }
-        if (_Controls.active){
-            heliControlls.Move();
-            
-          }
+        if (_Controls.active)
+        {
+
+            heliControlls.Move();    
+        }
     }
     
     
@@ -87,8 +88,11 @@ public class GameManager : MonoBehaviour
             if(_PlaneManager.GetPlane(_HitRelult[0].trackableId).alignment == UnityEngine.XR.ARSubsystems.PlaneAlignment.HorizontalUp)
             {
                 Pose pose = _HitRelult[0].pose;
+                
                 _Drone.transform.position = pose.position;
                 _Drone.SetActive(true);
+                plane.transform.position = pose.position;
+                plane.SetActive(true);
             }
         }
     }
@@ -97,7 +101,7 @@ public class GameManager : MonoBehaviour
     void EventOnClickFlyButton()
     {
         
-           
+           heliControlls.Works();
             
             _FlyButton.gameObject.SetActive(false);
             _Controls.SetActive(true);
@@ -109,6 +113,8 @@ public class GameManager : MonoBehaviour
             
                 
                 _LandButton.gameObject.SetActive(false);
+                _FlyButton.gameObject.SetActive(true);
+                _Controls.SetActive(false);
             
         }
         

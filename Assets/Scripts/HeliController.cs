@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class HeliController : MonoBehaviour
 {
+
     Rigidbody rb;
+    public Animator anim;
     public Joystick joystick;
     public Joystick joystick2;
     public float MoveSpd = 0.2f;
     Vector3 m_EulerAngleVelocity;
-
+    
+    public bool IsWorking;
     public  GameObject _Drone;
 
     public bool isMovingForward;
@@ -21,11 +24,16 @@ public class HeliController : MonoBehaviour
     {
         rb = _Drone.GetComponent<Rigidbody>();
     }
-
+    public void Works() {
+        this.IsWorking = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if(IsWorking)
+        {
+            anim.SetBool("IsWorking", true);
+        }
     }
     public void Move() {
         //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
@@ -43,7 +51,10 @@ public class HeliController : MonoBehaviour
     }
     public void tilting() {
             
+    
+
             if (joystick2.Horizontal > 0) {
+                
                 isMovingRight = true;
                 isMovingLeft = false;
                 }
