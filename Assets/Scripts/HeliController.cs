@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeliController : MonoBehaviour
 {
 
+
     Rigidbody rb;
     public Animator anim;
     public Joystick joystick;
@@ -15,25 +16,28 @@ public class HeliController : MonoBehaviour
     public bool IsWorking;
     public  GameObject _Drone;
 
-    public bool isMovingForward;
-    public bool isMovingBackward;
-    public bool isMovingRight;
-    public bool isMovingLeft;
+   
+    public GameObject vint;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = _Drone.GetComponent<Rigidbody>();
+        
+
     }
     public void Works() {
         this.IsWorking = true;
     }
     // Update is called once per frame
     void Update()
-    {
+    {   
         if(IsWorking)
         {
             anim.SetBool("IsWorking", true);
         }
+       
     }
     public void Move() {
         //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
@@ -49,48 +53,12 @@ public class HeliController : MonoBehaviour
         
         
     }
-    public void tilting() {
+
+    
+    
+        
+
+  
             
     
-
-            if (joystick2.Horizontal > 0) {
-                
-                isMovingRight = true;
-                isMovingLeft = false;
-                }
-            else if (joystick2.Horizontal < 0) {
-                isMovingLeft = true;
-                isMovingRight = false;
-                }
-            if (joystick2.Vertical < 0) {
-                isMovingBackward = true;
-               isMovingForward = false;
-                }
-            else if (joystick2.Vertical > 0) {
-            
-                isMovingForward = true;
-                isMovingBackward = false;
-
-                
-
-                }
-            if (joystick2.Vertical == 0) {
-                isMovingForward = false;
-                isMovingBackward = false;
-                }    
-            if ((joystick2.Horizontal) == 0) {
-                isMovingLeft = false;
-                isMovingRight = false;
-            }
-
-            if (isMovingForward) {
-                
-                 
-                }
-            if (isMovingBackward) {
-
-                
-                }    
-        
-    }
 }
