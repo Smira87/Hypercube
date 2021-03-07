@@ -17,7 +17,7 @@ public class HeliController : MonoBehaviour
     public  GameObject _Drone;
 
    
-    public GameObject vint;
+  
 
     
     // Start is called before the first frame update
