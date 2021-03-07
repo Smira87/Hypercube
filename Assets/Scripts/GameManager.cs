@@ -53,13 +53,11 @@ public class GameManager : MonoBehaviour
     {
        if (startedrotor)
     {
-        StartCoroutine( Rotate(Vector3.up, -180, 0.001f) );
+        StartCoroutine( Rotate(rotor1 ,Vector3.up, -180, 0.001f) );
+        StartCoroutine( Rotate(rotor2 ,Vector3.forward, 90, 0.001f) );
+        StartCoroutine( Rotate(rotor3 ,Vector3.forward, 85, 0.001f) );
     }
-        //float speedX = Input.GetAxis("Horizontal");
-        //float speedZ = Input.GetAxis("Vertical");
-        
-        //UpdateControls(ref _MovingLeft);
-       // UpdateControls(ref _MovingBack);
+     
 
         
         if(!_Controls.active)
@@ -76,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
     
     
-       IEnumerator Rotate( Vector3 axis, float angle, float duration = 1.0f)
+       IEnumerator Rotate(GameObject rotor ,Vector3 axis, float angle, float duration = 1.0f )
    {
      Quaternion from = this.transform.rotation;
      Quaternion to = this.transform.rotation;
@@ -85,11 +83,11 @@ public class GameManager : MonoBehaviour
      float elapsed = 0.0f;
      while( elapsed < duration )
      {
-       rotor1.transform.rotation = Quaternion.Slerp(from, to, elapsed / duration );
+       rotor.transform.rotation = Quaternion.Slerp(from, to, elapsed / duration );
        elapsed += Time.deltaTime;
        yield return null;
      }
-     rotor1.transform.rotation = to;
+     rotor.transform.rotation = to;
      
      
    }
@@ -129,7 +127,9 @@ public class GameManager : MonoBehaviour
     
     void EventOnClickFlyButton()
     {
-            StartCoroutine( Rotate(Vector3.up, -180, 1.5f) );
+            StartCoroutine( Rotate(rotor1 ,Vector3.up, -180, 1.5f) );
+            StartCoroutine( Rotate(rotor2 ,Vector3.forward, 180, 1.5f) );
+            StartCoroutine( Rotate(rotor3 ,Vector3.forward, 270, 1.5f) );
             startedrotor = true;
             heliControlls.Works();
 
