@@ -10,7 +10,7 @@ public class HeliController : MonoBehaviour
     public Animator anim;
     public Joystick joystick;
     public Joystick joystick2;
-    public float MoveSpd = 0.2f;
+    public float MoveSpd = 0.1f;
     Vector3 m_EulerAngleVelocity;
     
     public bool IsWorking;
@@ -25,25 +25,31 @@ public class HeliController : MonoBehaviour
     void Start()
     {
         rb = _Drone.GetComponent<Rigidbody>();
+       
         
 
     }
     public void Works() {
         this.IsWorking = true;
+        _Drone.GetComponent<AudioSource>().Play();
     }
     public void Stops() {
         this.IsWorking = false;
+        _Drone.GetComponent<AudioSource>().Stop();
     }
     // Update is called once per frame
     void Update()
     {   
+        
         if(IsWorking)
         {
             anim.SetBool("IsWorking", true);
+            
         }
         else 
         {
             anim.SetBool("IsWorking", false);
+            
         }
        
     }
@@ -66,8 +72,8 @@ public class HeliController : MonoBehaviour
     
         public void Tilting()
     {
-        float angleZ = -10 * joystick2.Vertical * 60.0f * Time.deltaTime;
-        float angleX = -10 * joystick2.Horizontal * 60.0f * Time.deltaTime;
+        float angleZ = -15 * joystick2.Vertical * 60.0f * Time.deltaTime;
+        float angleX = -15 * joystick2.Horizontal * 60.0f * Time.deltaTime;
 
 
         Vector3 rotation = _Model.transform.localRotation.eulerAngles;

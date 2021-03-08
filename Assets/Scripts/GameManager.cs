@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Button _LandButton;
     public  GameObject _Drone;
     
- 
+    
 
     public GameObject _Controls;
     public GameObject plane;
@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-
+        
+        
         _Controls.SetActive(false);
         _FlyButton.onClick.AddListener(EventOnClickFlyButton);
         _LandButton.onClick.AddListener(EventOnClickLandButton);
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
    
         void FixedUpdate()
     {
-    
+        
         //float speedX = Input.GetAxis("Horizontal");
         //float speedZ = Input.GetAxis("Vertical");
         
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
         if (_Controls.active)
         {
-
+            
             heliControlls.Move();    
             heliControlls.Tilting();
         }

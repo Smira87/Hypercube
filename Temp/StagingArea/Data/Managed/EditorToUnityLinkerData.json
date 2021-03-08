@@ -235,6 +235,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AnimationClip",
+            "fullManagedTypeName": "UnityEngine.AnimationClip",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "LineRenderer",
             "fullManagedTypeName": "UnityEngine.LineRenderer",
             "moduleName": "Core",
@@ -307,6 +316,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Motion",
+            "fullManagedTypeName": "UnityEngine.Motion",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Avatar",
             "fullManagedTypeName": "UnityEngine.Avatar",
             "moduleName": "Animation",
@@ -360,6 +378,15 @@
             ]
         },
         {
+            "managedAssemblyName": "",
+            "nativeClass": "SampleClip",
+            "fullManagedTypeName": "",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "GameObject",
             "fullManagedTypeName": "UnityEngine.GameObject",
@@ -406,6 +433,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioClip",
+            "fullManagedTypeName": "UnityEngine.AudioClip",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Collider",
             "fullManagedTypeName": "UnityEngine.Collider",
             "moduleName": "Physics",
@@ -418,6 +454,15 @@
             "nativeClass": "Rigidbody",
             "fullManagedTypeName": "UnityEngine.Rigidbody",
             "moduleName": "Physics",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioSource",
+            "fullManagedTypeName": "UnityEngine.AudioSource",
+            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Vert.unity"
             ]
@@ -445,6 +490,15 @@
             "nativeClass": "CanvasRenderer",
             "fullManagedTypeName": "UnityEngine.CanvasRenderer",
             "moduleName": "UI",
+            "usedInScenes": [
+                "Assets/Vert.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Light",
+            "fullManagedTypeName": "UnityEngine.Light",
+            "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Vert.unity"
             ]
@@ -505,6 +559,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "GameManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "HeliController",
             "moduleName": "",
             "usedInScenes": []
         },

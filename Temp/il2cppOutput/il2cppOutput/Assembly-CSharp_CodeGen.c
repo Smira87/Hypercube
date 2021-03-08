@@ -142,21 +142,43 @@ extern void TakingOffState__ctor_m743B8DD8B959A894C2FEF1C04F74E520FF549F5F (void
 extern void GameManager_Start_mD77CCDBF1DA8EC5C3AE7ED955DE4E7F54B79C88E (void);
 // 0x0000003D System.Void GameManager::FixedUpdate()
 extern void GameManager_FixedUpdate_m86605DEBEFCF527B48F1711C9152383F8DE3CC61 (void);
-// 0x0000003E System.Void GameManager::tilting()
-extern void GameManager_tilting_m64C0ACD028833A093D9D2F2E80013845E1646C8E (void);
-// 0x0000003F System.Void GameManager::LateUpdate()
-extern void GameManager_LateUpdate_m2958922DCD36152ACA1F9FAD812C3B25A057600B (void);
-// 0x00000040 System.Void GameManager::Move()
-extern void GameManager_Move_m7156CAC7C73DA0EBBB3C4834810EB7A97D11F2B7 (void);
-// 0x00000041 System.Void GameManager::UpdateAR()
+// 0x0000003E System.Collections.IEnumerator GameManager::waiter(System.Int32)
+extern void GameManager_waiter_m5980F686E644CFAFBA0F7E464670B9B8C5D185E7 (void);
+// 0x0000003F System.Void GameManager::UpdateAR()
 extern void GameManager_UpdateAR_m1A4BD920F82F6244DB6C0B131B41AE773D9889E8 (void);
-// 0x00000042 System.Void GameManager::EventOnClickFlyButton()
+// 0x00000040 System.Void GameManager::EventOnClickFlyButton()
 extern void GameManager_EventOnClickFlyButton_mC0CFF508B73054F65EAEF9A913849783AFD71623 (void);
-// 0x00000043 System.Void GameManager::EventOnClickLandButton()
+// 0x00000041 System.Void GameManager::EventOnClickLandButton()
 extern void GameManager_EventOnClickLandButton_m0650490532C914FDDD1AFCE5FC605B832A2667F8 (void);
-// 0x00000044 System.Void GameManager::.ctor()
+// 0x00000042 System.Void GameManager::.ctor()
 extern void GameManager__ctor_mF7F1107D38DE91EB8A57C1C3BB1A932C50CD9693 (void);
-static Il2CppMethodPointer s_methodPointers[68] = 
+// 0x00000043 System.Void HeliController::Start()
+extern void HeliController_Start_mFE238D59A08E7D1ACC4138DCD7F72281576E0BF0 (void);
+// 0x00000044 System.Void HeliController::Works()
+extern void HeliController_Works_mE0DD1FF5B3E90215C2C735AD8FA9FBD9D44FFA01 (void);
+// 0x00000045 System.Void HeliController::Stops()
+extern void HeliController_Stops_mC3CFAF52F41718203CFDA0FBC91F5D594F9735D9 (void);
+// 0x00000046 System.Void HeliController::Update()
+extern void HeliController_Update_m8304464A88ECC4EE6C8B1643414B02C477E3052B (void);
+// 0x00000047 System.Void HeliController::Move()
+extern void HeliController_Move_m94C5D7470ED5C409D6004F9E9B11A4927884DDA8 (void);
+// 0x00000048 System.Void HeliController::Tilting()
+extern void HeliController_Tilting_m63BEC7289887C62896E123587AD18B2F62474A99 (void);
+// 0x00000049 System.Void HeliController::.ctor()
+extern void HeliController__ctor_mC104B52CC9ADC15F40682670F60E536E286AA684 (void);
+// 0x0000004A System.Void GameManager_<waiter>d__12::.ctor(System.Int32)
+extern void U3CwaiterU3Ed__12__ctor_m1966CCE9E70EEED23E04E5E8E60FFBF5DC721E45 (void);
+// 0x0000004B System.Void GameManager_<waiter>d__12::System.IDisposable.Dispose()
+extern void U3CwaiterU3Ed__12_System_IDisposable_Dispose_m02832FE8BFFD6D4F0969976EA7EC2D28CA66B851 (void);
+// 0x0000004C System.Boolean GameManager_<waiter>d__12::MoveNext()
+extern void U3CwaiterU3Ed__12_MoveNext_mC007051D122F04349D10D643512270EB91AEC66A (void);
+// 0x0000004D System.Object GameManager_<waiter>d__12::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CwaiterU3Ed__12_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0493EA5AC944F6F2254E742F35C56E5AC881A6B1 (void);
+// 0x0000004E System.Void GameManager_<waiter>d__12::System.Collections.IEnumerator.Reset()
+extern void U3CwaiterU3Ed__12_System_Collections_IEnumerator_Reset_m0B3868AB3FCDF45B223ECFBE417DB02A95EC622F (void);
+// 0x0000004F System.Object GameManager_<waiter>d__12::System.Collections.IEnumerator.get_Current()
+extern void U3CwaiterU3Ed__12_System_Collections_IEnumerator_get_Current_m75BB7DCDD23D1E7628E27525AB1FE905C1299492 (void);
+static Il2CppMethodPointer s_methodPointers[79] = 
 {
 	JoystickPlayerExample_FixedUpdate_m01D558819D864B0B36B12AECB92B7A9FE76D63B3,
 	JoystickPlayerExample__ctor_m49F04D0D45C4CBE5F904177CF3AB4A60249AD854,
@@ -219,15 +241,26 @@ static Il2CppMethodPointer s_methodPointers[68] =
 	TakingOffState__ctor_m743B8DD8B959A894C2FEF1C04F74E520FF549F5F,
 	GameManager_Start_mD77CCDBF1DA8EC5C3AE7ED955DE4E7F54B79C88E,
 	GameManager_FixedUpdate_m86605DEBEFCF527B48F1711C9152383F8DE3CC61,
-	GameManager_tilting_m64C0ACD028833A093D9D2F2E80013845E1646C8E,
-	GameManager_LateUpdate_m2958922DCD36152ACA1F9FAD812C3B25A057600B,
-	GameManager_Move_m7156CAC7C73DA0EBBB3C4834810EB7A97D11F2B7,
+	GameManager_waiter_m5980F686E644CFAFBA0F7E464670B9B8C5D185E7,
 	GameManager_UpdateAR_m1A4BD920F82F6244DB6C0B131B41AE773D9889E8,
 	GameManager_EventOnClickFlyButton_mC0CFF508B73054F65EAEF9A913849783AFD71623,
 	GameManager_EventOnClickLandButton_m0650490532C914FDDD1AFCE5FC605B832A2667F8,
 	GameManager__ctor_mF7F1107D38DE91EB8A57C1C3BB1A932C50CD9693,
+	HeliController_Start_mFE238D59A08E7D1ACC4138DCD7F72281576E0BF0,
+	HeliController_Works_mE0DD1FF5B3E90215C2C735AD8FA9FBD9D44FFA01,
+	HeliController_Stops_mC3CFAF52F41718203CFDA0FBC91F5D594F9735D9,
+	HeliController_Update_m8304464A88ECC4EE6C8B1643414B02C477E3052B,
+	HeliController_Move_m94C5D7470ED5C409D6004F9E9B11A4927884DDA8,
+	HeliController_Tilting_m63BEC7289887C62896E123587AD18B2F62474A99,
+	HeliController__ctor_mC104B52CC9ADC15F40682670F60E536E286AA684,
+	U3CwaiterU3Ed__12__ctor_m1966CCE9E70EEED23E04E5E8E60FFBF5DC721E45,
+	U3CwaiterU3Ed__12_System_IDisposable_Dispose_m02832FE8BFFD6D4F0969976EA7EC2D28CA66B851,
+	U3CwaiterU3Ed__12_MoveNext_mC007051D122F04349D10D643512270EB91AEC66A,
+	U3CwaiterU3Ed__12_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0493EA5AC944F6F2254E742F35C56E5AC881A6B1,
+	U3CwaiterU3Ed__12_System_Collections_IEnumerator_Reset_m0B3868AB3FCDF45B223ECFBE417DB02A95EC622F,
+	U3CwaiterU3Ed__12_System_Collections_IEnumerator_get_Current_m75BB7DCDD23D1E7628E27525AB1FE905C1299492,
 };
-static const int32_t s_InvokerIndices[68] = 
+static const int32_t s_InvokerIndices[79] = 
 {
 	23,
 	23,
@@ -253,18 +286,18 @@ static const int32_t s_InvokerIndices[68] =
 	23,
 	26,
 	26,
-	1893,
+	1895,
 	23,
-	1721,
+	1723,
 	26,
-	1700,
+	1702,
 	23,
 	657,
 	277,
 	23,
 	26,
 	26,
-	1893,
+	1895,
 	23,
 	23,
 	23,
@@ -277,32 +310,43 @@ static const int32_t s_InvokerIndices[68] =
 	23,
 	26,
 	26,
-	1893,
+	1895,
 	23,
-	1488,
-	1488,
+	1490,
+	1490,
 	23,
-	1488,
+	1490,
 	23,
-	1488,
+	1490,
 	23,
-	1488,
-	23,
-	23,
+	1490,
 	23,
 	23,
 	23,
-	23,
+	34,
 	23,
 	23,
 	23,
 	23,
+	23,
+	23,
+	23,
+	23,
+	23,
+	23,
+	23,
+	32,
+	23,
+	102,
+	14,
+	23,
+	14,
 };
 extern const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	68,
+	79,
 	s_methodPointers,
 	s_InvokerIndices,
 	0,
