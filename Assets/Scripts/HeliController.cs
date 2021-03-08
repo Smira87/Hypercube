@@ -31,12 +31,19 @@ public class HeliController : MonoBehaviour
     public void Works() {
         this.IsWorking = true;
     }
+    public void Stops() {
+        this.IsWorking = false;
+    }
     // Update is called once per frame
     void Update()
     {   
         if(IsWorking)
         {
             anim.SetBool("IsWorking", true);
+        }
+        else 
+        {
+            anim.SetBool("IsWorking", false);
         }
        
     }
@@ -69,7 +76,7 @@ public class HeliController : MonoBehaviour
     }
 
   
-    }
+    
     
 
 }

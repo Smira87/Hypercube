@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     yield return new WaitForSecondsRealtime(x);
 
     
-    _FlyButton.gameObject.SetActive(false);
+    
     _Controls.SetActive(true);
 
    
@@ -110,7 +110,8 @@ public class GameManager : MonoBehaviour
             
             
             heliControlls.Works();
-
+            _LandButton.gameObject.SetActive(true);
+            _FlyButton.gameObject.SetActive(false);
             
             StartCoroutine(waiter(2));
             
@@ -122,7 +123,8 @@ public class GameManager : MonoBehaviour
     void EventOnClickLandButton()
         {
             
-                
+                heliControlls.Stops();
+
                 _LandButton.gameObject.SetActive(false);
                 _FlyButton.gameObject.SetActive(true);
                 _Controls.SetActive(false);
