@@ -15,6 +15,7 @@ public class HeliController : MonoBehaviour
     
     public bool IsWorking;
     public  GameObject _Drone;
+    public  GameObject _Model;
 
    
   
@@ -56,7 +57,16 @@ public class HeliController : MonoBehaviour
 
     
     
-        
+        public void Tilting()
+    {
+        float angleZ = -10 * joystick2.Vertical * 60.0f * Time.deltaTime;
+        float angleX = -10 * joystick2.Horizontal * 60.0f * Time.deltaTime;
+
+
+        Vector3 rotation = _Model.transform.localRotation.eulerAngles;
+        _Model.transform.localRotation = Quaternion.Euler(angleX, rotation.y, angleZ);
+
+    }
 
   
     }
