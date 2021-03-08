@@ -20,12 +20,9 @@ public class GameManager : MonoBehaviour
  
 
     public GameObject _Controls;
-    
     public GameObject plane;
-    public GameObject rotor1;
-    public GameObject rotor2;
-    public GameObject rotor3;
-    public bool startedrotor;
+    
+
     
     
     //AR
@@ -51,10 +48,7 @@ public class GameManager : MonoBehaviour
    
         void FixedUpdate()
     {
-       if (startedrotor)
-    {
-        StartCoroutine( Rotate(Vector3.up, -180, 0.001f) );
-    }
+    
         //float speedX = Input.GetAxis("Horizontal");
         //float speedZ = Input.GetAxis("Vertical");
         
@@ -70,29 +64,14 @@ public class GameManager : MonoBehaviour
         {
 
             heliControlls.Move();    
+            heliControlls.Tilting();
         }
 
 
     }
     
     
-       IEnumerator Rotate( Vector3 axis, float angle, float duration = 1.0f)
-   {
-     Quaternion from = this.transform.rotation;
-     Quaternion to = this.transform.rotation;
-     to *= Quaternion.Euler( axis * angle );
-    
-     float elapsed = 0.0f;
-     while( elapsed < duration )
-     {
-       rotor1.transform.rotation = Quaternion.Slerp(from, to, elapsed / duration );
-       elapsed += Time.deltaTime;
-       yield return null;
-     }
-     rotor1.transform.rotation = to;
-     
-     
-   }
+
 
      IEnumerator waiter(int x)
 {
@@ -129,8 +108,8 @@ public class GameManager : MonoBehaviour
     
     void EventOnClickFlyButton()
     {
-            StartCoroutine( Rotate(Vector3.up, -180, 1.5f) );
-            startedrotor = true;
+            
+            
             heliControlls.Works();
 
             
