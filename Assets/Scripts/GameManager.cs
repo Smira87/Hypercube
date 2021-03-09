@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject _Controls;
     public GameObject plane;
     
-
+    public SoundHandler sh;
     
     
     //AR
@@ -80,13 +80,22 @@ public class GameManager : MonoBehaviour
     //Wait for x seconds
     yield return new WaitForSecondsRealtime(x);
 
-    
-    
+    sh.StopStarts();
+    sh.PlayWorks();
     _Controls.SetActive(true);
 
    
 }   
-        
+    IEnumerator waiter2(int x)
+{
+ 
+    //Wait for x seconds
+    yield return new WaitForSecondsRealtime(x);
+
+   sh.StopWorks();
+
+   
+}   
 
     void UpdateAR()
     {
@@ -114,7 +123,7 @@ public class GameManager : MonoBehaviour
             heliControlls.Works();
             _LandButton.gameObject.SetActive(true);
             _FlyButton.gameObject.SetActive(false);
-            
+            sh.PlayStarts();
             StartCoroutine(waiter(2));
             
             
@@ -126,7 +135,7 @@ public class GameManager : MonoBehaviour
         {
             
                 heliControlls.Stops();
-
+                StartCoroutine(waiter2(2));
                 _LandButton.gameObject.SetActive(false);
                 _FlyButton.gameObject.SetActive(true);
                 _Controls.SetActive(false);

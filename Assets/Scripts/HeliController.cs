@@ -18,7 +18,7 @@ public class HeliController : MonoBehaviour
     public  GameObject _Drone;
     public  GameObject _Model;
 
-   
+    
      
 
     
@@ -29,15 +29,17 @@ public class HeliController : MonoBehaviour
        
         
 
+        
+
     }
     public void Works() {
         this.IsWorking = true;
-        _Drone.GetComponent<AudioSource>().Play();
+        
         //rb.AddForce(rb.transform.right/100f);
     }
     public void Stops() {
         this.IsWorking = false;
-        _Drone.GetComponent<AudioSource>().Stop();
+        
     }
     // Update is called once per frame
     void Update()
