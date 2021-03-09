@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
                 _FlyButton.gameObject.SetActive(true);
                 _Controls.SetActive(false);
 
-                _Drone.SetActive(false;
+                _Drone.SetActive(false);
                 
                 plane.SetActive(false);
             
