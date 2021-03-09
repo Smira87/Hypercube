@@ -12,13 +12,14 @@ public class HeliController : MonoBehaviour
     public Joystick joystick2;
     public float MoveSpd = 0.1f;
     Vector3 m_EulerAngleVelocity;
+    Vector3 m_EulerAngleVelocity2;
     
     public bool IsWorking;
     public  GameObject _Drone;
     public  GameObject _Model;
 
    
-  
+     
 
     
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class HeliController : MonoBehaviour
     public void Works() {
         this.IsWorking = true;
         _Drone.GetComponent<AudioSource>().Play();
+        //rb.AddForce(rb.transform.right/100f);
     }
     public void Stops() {
         this.IsWorking = false;
@@ -53,17 +55,38 @@ public class HeliController : MonoBehaviour
         }
        
     }
+ 
     public void Move() {
         //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
-        var newpos = rb.position - rb.transform.forward * joystick2.Horizontal * MoveSpd + rb.transform.right * joystick2.Vertical * MoveSpd + rb.transform.up * joystick.Vertical * MoveSpd;
-        rb.MovePosition (newpos);
+        //var newpos = rb.position - rb.transform.forward * joystick2.Horizontal * MoveSpd + rb.transform.right * joystick2.Vertical * MoveSpd + rb.transform.up * joystick.Vertical * MoveSpd;
+        //rb.MovePosition (newpos);
+        
+        
+        
         
         m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         
+        
+        
+
+        if (joystick2.Vertical > 0){
+        rb.AddForce(rb.transform.right/100f);
+        }
+        if (joystick2.Vertical < 0){
+        rb.AddForce(-rb.transform.right/100f);
+        }
+        if (joystick2.Horizontal > 0){
+        rb.AddForce(-rb.transform.forward/100f);
+        }
+        if (joystick2.Horizontal < 0){
+        rb.AddForce(rb.transform.forward/100f);
+        }
+
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
         
         
         rb.MoveRotation(rb.rotation * deltaRotation);
+        
         
         
     }

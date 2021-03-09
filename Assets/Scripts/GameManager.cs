@@ -64,7 +64,8 @@ public class GameManager : MonoBehaviour
         if (_Controls.active)
         {
             
-            heliControlls.Move();    
+            heliControlls.Move();   
+            
             heliControlls.Tilting();
         }
 
