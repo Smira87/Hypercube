@@ -716,7 +716,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 6ed273140df176c6eb6474a64db77c16
+      Hash: 1b61b01875149adc81d10acc763c3e87
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HeliController
@@ -921,4 +921,4 @@ ScriptsOnlyBuild:
   platform: 9
   scenePathNames:
   - Assets/Vert.unity
-  playerPath: /Applications/Apache4d/XCode builds/MiMe
+  playerPath: /Applications/Apache4d/XCode builds/Vertik

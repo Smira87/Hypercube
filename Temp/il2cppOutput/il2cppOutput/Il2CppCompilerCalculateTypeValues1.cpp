@@ -23203,18 +23203,18 @@ public:
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153 * ___joystick_6;
 	// Joystick HeliController::joystick2
 	Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153 * ___joystick2_7;
-	// System.Single HeliController::MoveSpd
-	float ___MoveSpd_8;
 	// UnityEngine.Vector3 HeliController::m_EulerAngleVelocity
-	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___m_EulerAngleVelocity_9;
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___m_EulerAngleVelocity_8;
 	// UnityEngine.Vector3 HeliController::m_EulerAngleVelocity2
-	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___m_EulerAngleVelocity2_10;
+	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___m_EulerAngleVelocity2_9;
 	// System.Boolean HeliController::IsWorking
-	bool ___IsWorking_11;
+	bool ___IsWorking_10;
 	// UnityEngine.GameObject HeliController::_Drone
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ____Drone_12;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ____Drone_11;
 	// UnityEngine.GameObject HeliController::_Model
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ____Model_13;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ____Model_12;
+	// System.Single HeliController::torque
+	float ___torque_13;
 
 public:
 	inline static int32_t get_offset_of_rb_4() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___rb_4)); }
@@ -23253,54 +23253,54 @@ public:
 		Il2CppCodeGenWriteBarrier((void**)(&___joystick2_7), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_MoveSpd_8() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___MoveSpd_8)); }
-	inline float get_MoveSpd_8() const { return ___MoveSpd_8; }
-	inline float* get_address_of_MoveSpd_8() { return &___MoveSpd_8; }
-	inline void set_MoveSpd_8(float value)
+	inline static int32_t get_offset_of_m_EulerAngleVelocity_8() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___m_EulerAngleVelocity_8)); }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_m_EulerAngleVelocity_8() const { return ___m_EulerAngleVelocity_8; }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_m_EulerAngleVelocity_8() { return &___m_EulerAngleVelocity_8; }
+	inline void set_m_EulerAngleVelocity_8(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
 	{
-		___MoveSpd_8 = value;
+		___m_EulerAngleVelocity_8 = value;
 	}
 
-	inline static int32_t get_offset_of_m_EulerAngleVelocity_9() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___m_EulerAngleVelocity_9)); }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_m_EulerAngleVelocity_9() const { return ___m_EulerAngleVelocity_9; }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_m_EulerAngleVelocity_9() { return &___m_EulerAngleVelocity_9; }
-	inline void set_m_EulerAngleVelocity_9(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
+	inline static int32_t get_offset_of_m_EulerAngleVelocity2_9() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___m_EulerAngleVelocity2_9)); }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_m_EulerAngleVelocity2_9() const { return ___m_EulerAngleVelocity2_9; }
+	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_m_EulerAngleVelocity2_9() { return &___m_EulerAngleVelocity2_9; }
+	inline void set_m_EulerAngleVelocity2_9(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
 	{
-		___m_EulerAngleVelocity_9 = value;
+		___m_EulerAngleVelocity2_9 = value;
 	}
 
-	inline static int32_t get_offset_of_m_EulerAngleVelocity2_10() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___m_EulerAngleVelocity2_10)); }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  get_m_EulerAngleVelocity2_10() const { return ___m_EulerAngleVelocity2_10; }
-	inline Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720 * get_address_of_m_EulerAngleVelocity2_10() { return &___m_EulerAngleVelocity2_10; }
-	inline void set_m_EulerAngleVelocity2_10(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
+	inline static int32_t get_offset_of_IsWorking_10() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___IsWorking_10)); }
+	inline bool get_IsWorking_10() const { return ___IsWorking_10; }
+	inline bool* get_address_of_IsWorking_10() { return &___IsWorking_10; }
+	inline void set_IsWorking_10(bool value)
 	{
-		___m_EulerAngleVelocity2_10 = value;
+		___IsWorking_10 = value;
 	}
 
-	inline static int32_t get_offset_of_IsWorking_11() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___IsWorking_11)); }
-	inline bool get_IsWorking_11() const { return ___IsWorking_11; }
-	inline bool* get_address_of_IsWorking_11() { return &___IsWorking_11; }
-	inline void set_IsWorking_11(bool value)
+	inline static int32_t get_offset_of__Drone_11() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ____Drone_11)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get__Drone_11() const { return ____Drone_11; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of__Drone_11() { return &____Drone_11; }
+	inline void set__Drone_11(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___IsWorking_11 = value;
+		____Drone_11 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____Drone_11), (void*)value);
 	}
 
-	inline static int32_t get_offset_of__Drone_12() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ____Drone_12)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get__Drone_12() const { return ____Drone_12; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of__Drone_12() { return &____Drone_12; }
-	inline void set__Drone_12(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of__Model_12() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ____Model_12)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get__Model_12() const { return ____Model_12; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of__Model_12() { return &____Model_12; }
+	inline void set__Model_12(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		____Drone_12 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&____Drone_12), (void*)value);
+		____Model_12 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____Model_12), (void*)value);
 	}
 
-	inline static int32_t get_offset_of__Model_13() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ____Model_13)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get__Model_13() const { return ____Model_13; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of__Model_13() { return &____Model_13; }
-	inline void set__Model_13(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_torque_13() { return static_cast<int32_t>(offsetof(HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F, ___torque_13)); }
+	inline float get_torque_13() const { return ___torque_13; }
+	inline float* get_address_of_torque_13() { return &___torque_13; }
+	inline void set_torque_13(float value)
 	{
-		____Model_13 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&____Model_13), (void*)value);
+		___torque_13 = value;
 	}
 };
 
@@ -36691,12 +36691,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable2744[10] =
 	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_anim_5(),
 	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_joystick_6(),
 	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_joystick2_7(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_MoveSpd_8(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_m_EulerAngleVelocity_9(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_m_EulerAngleVelocity2_10(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_IsWorking_11(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of__Drone_12(),
-	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of__Model_13(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_m_EulerAngleVelocity_8(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_m_EulerAngleVelocity2_9(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_IsWorking_10(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of__Drone_11(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of__Model_12(),
+	HeliController_t0B3D6629219B3C2E2A55517C6D2616D3B1E7626F::get_offset_of_torque_13(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2745;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize2745 = { sizeof (SoundHandler_tA89E3FCE61F275C79CEFBAA1800BC5A296FFBA1D), -1, 0, 0 };

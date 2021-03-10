@@ -18,7 +18,7 @@ public class HeliController : MonoBehaviour
     public  GameObject _Drone;
     public  GameObject _Model;
 
-    public float torque = 0.02f;
+    //public float torque = 0.02f;
      
 
     
@@ -89,13 +89,13 @@ public class HeliController : MonoBehaviour
         if (joystick.Vertical > 0){
         rb.AddForce(rb.transform.up/100f);
         }
-        //Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
         
         
-        //rb.MoveRotation(rb.rotation * deltaRotation);
+        rb.MoveRotation(rb.rotation * deltaRotation);
         
-        float turn = joystick.Horizontal;
-        rb.AddTorque(Vector3.up * turn * torque);
+        //float turn = joystick.Horizontal;
+        //rb.AddTorque(Vector3.up * turn * torque);
         
     }
 
