@@ -5603,6 +5603,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_AddForce_mC8140D90B806634A7336
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Vector3_op_UnaryNegation_m2AFBBF22801F9BCA5A4EBE642A29F433FE1339C2 (Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___a0, const RuntimeMethod* method);
 // UnityEngine.Vector3 UnityEngine.Transform::get_forward()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Transform_get_forward_m0BE1E88B86049ADA39391C3ACED2314A624BC67F (Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * __this, const RuntimeMethod* method);
+// UnityEngine.Vector3 UnityEngine.Transform::get_up()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  Transform_get_up_m3E443F6EB278D547946E80D77065A871BEEEE282 (Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * __this, const RuntimeMethod* method);
 // System.Single UnityEngine.Time::get_deltaTime()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_deltaTime_m16F98FC9BA931581236008C288E3B25CBCB7C81E (const RuntimeMethod* method);
 // UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)
@@ -6764,6 +6766,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HeliController_Move_m94C5D7470ED5C409D60
 	bool V_2 = false;
 	bool V_3 = false;
 	bool V_4 = false;
+	bool V_5 = false;
+	bool V_6 = false;
 	{
 		// m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
 		Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153 * L_0 = __this->get_joystick_6();
@@ -6883,23 +6887,78 @@ IL_00eb:
 
 IL_012b:
 	{
-		// Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
-		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_37 = __this->get_m_EulerAngleVelocity_9();
-		float L_38 = Time_get_deltaTime_m16F98FC9BA931581236008C288E3B25CBCB7C81E(/*hidden argument*/NULL);
-		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
-		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_39 = Vector3_op_Multiply_m1C5F07723615156ACF035D88A1280A9E8F35A04E(L_37, L_38, /*hidden argument*/NULL);
-		IL2CPP_RUNTIME_CLASS_INIT(Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357_il2cpp_TypeInfo_var);
-		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_40 = Quaternion_Euler_m55C96FCD397CC69109261572710608D12A4CBD2B(L_39, /*hidden argument*/NULL);
-		V_0 = L_40;
-		// rb.MoveRotation(rb.rotation * deltaRotation);
+		// if (joystick.Vertical < 0){
+		Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153 * L_37 = __this->get_joystick_6();
+		NullCheck(L_37);
+		float L_38 = Joystick_get_Vertical_m2326D40EF66E0A5E2B34F9CF02A53C05CCAFDED0(L_37, /*hidden argument*/NULL);
+		V_5 = (bool)((((float)L_38) < ((float)(0.0f)))? 1 : 0);
+		bool L_39 = V_5;
+		if (!L_39)
+		{
+			goto IL_0170;
+		}
+	}
+	{
+		// rb.AddForce(-rb.transform.up/100f);
+		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_40 = __this->get_rb_4();
 		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_41 = __this->get_rb_4();
-		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_42 = __this->get_rb_4();
-		NullCheck(L_42);
-		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_43 = Rigidbody_get_rotation_mD967DD98F16F80C0D74F8F1C25953D0609906BE5(L_42, /*hidden argument*/NULL);
-		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_44 = V_0;
-		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_45 = Quaternion_op_Multiply_mDB9F738AA8160E3D85549F4FEDA23BC658B5A790(L_43, L_44, /*hidden argument*/NULL);
 		NullCheck(L_41);
-		Rigidbody_MoveRotation_mCBE2CF9F1B4A86C4BCB899AAB4C4EE8BBAD21C84(L_41, L_45, /*hidden argument*/NULL);
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_42 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_41, /*hidden argument*/NULL);
+		NullCheck(L_42);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_43 = Transform_get_up_m3E443F6EB278D547946E80D77065A871BEEEE282(L_42, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_44 = Vector3_op_UnaryNegation_m2AFBBF22801F9BCA5A4EBE642A29F433FE1339C2(L_43, /*hidden argument*/NULL);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_45 = Vector3_op_Division_mDF34F1CC445981B4D1137765BC6277419E561624(L_44, (100.0f), /*hidden argument*/NULL);
+		NullCheck(L_40);
+		Rigidbody_AddForce_mC8140D90B806634A733624F671C45AD7CDBEDB38(L_40, L_45, /*hidden argument*/NULL);
+	}
+
+IL_0170:
+	{
+		// if (joystick.Vertical > 0){
+		Joystick_t3DF5D60C31824A6BFD16338F9377102BE73A0153 * L_46 = __this->get_joystick_6();
+		NullCheck(L_46);
+		float L_47 = Joystick_get_Vertical_m2326D40EF66E0A5E2B34F9CF02A53C05CCAFDED0(L_46, /*hidden argument*/NULL);
+		V_6 = (bool)((((float)L_47) > ((float)(0.0f)))? 1 : 0);
+		bool L_48 = V_6;
+		if (!L_48)
+		{
+			goto IL_01b0;
+		}
+	}
+	{
+		// rb.AddForce(rb.transform.up/100f);
+		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_49 = __this->get_rb_4();
+		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_50 = __this->get_rb_4();
+		NullCheck(L_50);
+		Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * L_51 = Component_get_transform_m00F05BD782F920C301A7EBA480F3B7A904C07EC9(L_50, /*hidden argument*/NULL);
+		NullCheck(L_51);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_52 = Transform_get_up_m3E443F6EB278D547946E80D77065A871BEEEE282(L_51, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_53 = Vector3_op_Division_mDF34F1CC445981B4D1137765BC6277419E561624(L_52, (100.0f), /*hidden argument*/NULL);
+		NullCheck(L_49);
+		Rigidbody_AddForce_mC8140D90B806634A733624F671C45AD7CDBEDB38(L_49, L_53, /*hidden argument*/NULL);
+	}
+
+IL_01b0:
+	{
+		// Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_54 = __this->get_m_EulerAngleVelocity_9();
+		float L_55 = Time_get_deltaTime_m16F98FC9BA931581236008C288E3B25CBCB7C81E(/*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720_il2cpp_TypeInfo_var);
+		Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  L_56 = Vector3_op_Multiply_m1C5F07723615156ACF035D88A1280A9E8F35A04E(L_54, L_55, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357_il2cpp_TypeInfo_var);
+		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_57 = Quaternion_Euler_m55C96FCD397CC69109261572710608D12A4CBD2B(L_56, /*hidden argument*/NULL);
+		V_0 = L_57;
+		// rb.MoveRotation(rb.rotation * deltaRotation);
+		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_58 = __this->get_rb_4();
+		Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * L_59 = __this->get_rb_4();
+		NullCheck(L_59);
+		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_60 = Rigidbody_get_rotation_mD967DD98F16F80C0D74F8F1C25953D0609906BE5(L_59, /*hidden argument*/NULL);
+		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_61 = V_0;
+		Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  L_62 = Quaternion_op_Multiply_mDB9F738AA8160E3D85549F4FEDA23BC658B5A790(L_60, L_61, /*hidden argument*/NULL);
+		NullCheck(L_58);
+		Rigidbody_MoveRotation_mCBE2CF9F1B4A86C4BCB899AAB4C4EE8BBAD21C84(L_58, L_62, /*hidden argument*/NULL);
 		// }
 		return;
 	}

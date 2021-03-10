@@ -921,4 +921,4 @@ ScriptsOnlyBuild:
   platform: 9
   scenePathNames:
   - Assets/Vert.unity
-  playerPath: /Applications/Apache4d/XCode builds/Mi7
+  playerPath: /Applications/Apache4d/XCode builds/MiMe

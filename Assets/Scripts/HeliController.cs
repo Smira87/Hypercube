@@ -10,7 +10,7 @@ public class HeliController : MonoBehaviour
     public Animator anim;
     public Joystick joystick;
     public Joystick joystick2;
-    public float MoveSpd = 0.1f;
+    //public float MoveSpd = 0.1f;
     Vector3 m_EulerAngleVelocity;
     Vector3 m_EulerAngleVelocity2;
     
@@ -18,7 +18,7 @@ public class HeliController : MonoBehaviour
     public  GameObject _Drone;
     public  GameObject _Model;
 
-    
+    public float torque = 0.02f;
      
 
     
@@ -66,7 +66,7 @@ public class HeliController : MonoBehaviour
         
         
         
-        m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
+        //m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         
         
         
@@ -89,12 +89,13 @@ public class HeliController : MonoBehaviour
         if (joystick.Vertical > 0){
         rb.AddForce(rb.transform.up/100f);
         }
-        Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+        //Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
         
         
-        rb.MoveRotation(rb.rotation * deltaRotation);
+        //rb.MoveRotation(rb.rotation * deltaRotation);
         
-        
+        float turn = joystick.Horizontal;
+        rb.AddTorque(Vector3.up * turn * torque);
         
     }
 
@@ -102,8 +103,8 @@ public class HeliController : MonoBehaviour
     
         public void Tilting()
     {
-        float angleZ = -15 * joystick2.Vertical * 60.0f * Time.deltaTime;
-        float angleX = -15 * joystick2.Horizontal * 60.0f * Time.deltaTime;
+        float angleZ = -20 * joystick2.Vertical * 60.0f * Time.deltaTime;
+        float angleX = -20 * joystick2.Horizontal * 60.0f * Time.deltaTime;
 
 
         Vector3 rotation = _Model.transform.localRotation.eulerAngles;
