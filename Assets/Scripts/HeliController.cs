@@ -106,8 +106,11 @@ public class HeliController : MonoBehaviour
         float angleZ = -20 * joystick2.Vertical * 60.0f * Time.deltaTime;
         float angleX = -20 * joystick2.Horizontal * 60.0f * Time.deltaTime;
 
-
         Vector3 rotation = _Model.transform.localRotation.eulerAngles;
+        
+      
+
+
         _Model.transform.localRotation = Quaternion.Euler(angleX, rotation.y, angleZ);
 
     }
