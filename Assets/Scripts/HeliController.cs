@@ -66,7 +66,7 @@ public class HeliController : MonoBehaviour
         
         
         
-        //m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
+        
         
         
         
@@ -89,6 +89,7 @@ public class HeliController : MonoBehaviour
         if (joystick.Vertical > 0){
         rb.AddForce(rb.transform.up/100f);
         }
+        m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
         
         
