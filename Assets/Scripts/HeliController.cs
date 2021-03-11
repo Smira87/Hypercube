@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HeliController : MonoBehaviour
 {
-
-
     Rigidbody rb;
     public Animator anim;
     public Joystick joystick;
