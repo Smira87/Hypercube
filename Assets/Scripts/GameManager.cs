@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
     }
     void EventOnClickLandButton()
         {
-
+                heliPlaced = false;
                 heliControlls.Stops();
                 StartCoroutine(waiter2(2));
                 _LandButton.gameObject.SetActive(false);
