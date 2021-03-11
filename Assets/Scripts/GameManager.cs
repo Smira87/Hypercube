@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     
     public HeliController heliControlls;
-
+    public bool heliPlaced;
    
 
 
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
        // UpdateControls(ref _MovingBack);
 
         
-        if(!_Controls.active)
+        if(!heliPlaced)
         {
             UpdateAR();
         }
@@ -119,21 +119,18 @@ public class GameManager : MonoBehaviour
     void EventOnClickFlyButton()
     {
             
-            
+            heliPlaced = true;
             heliControlls.Works();
             _LandButton.gameObject.SetActive(true);
             _FlyButton.gameObject.SetActive(false);
             sh.PlayStarts();
             StartCoroutine(waiter(2));
             
-            
-            
-           
         
     }
     void EventOnClickLandButton()
         {
-            
+
                 heliControlls.Stops();
                 StartCoroutine(waiter2(2));
                 _LandButton.gameObject.SetActive(false);
