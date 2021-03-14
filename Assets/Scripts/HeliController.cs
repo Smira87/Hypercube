@@ -43,7 +43,7 @@ public class HeliController : MonoBehaviour
  
     public void Move() {
     
-        Vector3 moveDirection = transform.right * joystick2.Vertical + transform.forward * (-joystick2.Horizontal);
+        Vector3 moveDirection = transform.right * joystick2.Vertical + transform.forward * (-joystick2.Horizontal) +transform.up * joystick.Vertical;
 
         rb.AddForce(moveDirection * MoveSpd * Time.deltaTime, ForceMode.VelocityChange);        
 
