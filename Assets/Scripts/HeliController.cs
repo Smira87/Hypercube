@@ -39,11 +39,7 @@ public class HeliController : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
-    {   
-        
-       
-    }
+  
  
     public void Move() {
         //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
@@ -51,12 +47,12 @@ public class HeliController : MonoBehaviour
         //rb.MovePosition (newpos);
         
         
+    
+        Vector3 moveDirection = transform.right * joystick2.Vertical + transform.forward * (-joystick2.Horizontal);
+
+        rb.AddForce(moveDirection * Time.deltaTime, ForceMode.VelocityChange);       
         
-        
-        
-        
-        
-        
+        /*
 
         if (joystick2.Vertical > 0){
         rb.AddForce(rb.transform.right/100f);
@@ -76,6 +72,8 @@ public class HeliController : MonoBehaviour
         if (joystick.Vertical > 0){
         rb.AddForce(rb.transform.up/100f);
         }
+        */
+
         m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
         
