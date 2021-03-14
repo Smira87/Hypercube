@@ -8,7 +8,7 @@ public class HeliController : MonoBehaviour
     public Animator anim;
     public Joystick joystick;
     public Joystick joystick2;
-    //public float MoveSpd = 0.1f;
+    public float MoveSpd = 2.0f;
     Vector3 m_EulerAngleVelocity;
     Vector3 m_EulerAngleVelocity2;
     
@@ -45,9 +45,7 @@ public class HeliController : MonoBehaviour
     
         Vector3 moveDirection = transform.right * joystick2.Vertical + transform.forward * (-joystick2.Horizontal);
 
-        rb.AddForce(moveDirection * Time.deltaTime, ForceMode.VelocityChange);       
-        
-    
+        rb.AddForce(moveDirection * MoveSpd * Time.deltaTime, ForceMode.VelocityChange);        
 
         m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
@@ -66,9 +64,6 @@ public class HeliController : MonoBehaviour
         float angleX = -20 * joystick2.Horizontal * 60.0f * Time.deltaTime;
 
         Vector3 rotation = _Model.transform.localRotation.eulerAngles;
-        
-      
-
 
         _Model.transform.localRotation = Quaternion.Euler(angleX, rotation.y, angleZ);
 
