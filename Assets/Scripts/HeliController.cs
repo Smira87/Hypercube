@@ -12,7 +12,7 @@ public class HeliController : MonoBehaviour
     Vector3 m_EulerAngleVelocity;
     Vector3 m_EulerAngleVelocity2;
     
-    public bool IsWorking;
+
     public  GameObject _Drone;
     public  GameObject _Model;
 
@@ -24,35 +24,24 @@ public class HeliController : MonoBehaviour
     void Start()
     {
         rb = _Drone.GetComponent<Rigidbody>();
-       
-        
 
-        
 
     }
     public void Works() {
-        this.IsWorking = true;
+        
+        anim.SetBool("IsWorking", true);
         
         //rb.AddForce(rb.transform.right/100f);
     }
     public void Stops() {
-        this.IsWorking = false;
+        
+        anim.SetBool("IsWorking", true);
         
     }
     // Update is called once per frame
     void Update()
     {   
         
-        if(IsWorking)
-        {
-            anim.SetBool("IsWorking", true);
-            
-        }
-        else 
-        {
-            anim.SetBool("IsWorking", false);
-            
-        }
        
     }
  
