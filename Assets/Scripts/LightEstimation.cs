@@ -44,11 +44,12 @@ public class LightEstimation : MonoBehaviour
             tempValue.text = $"Temp: {args.lightEstimation.averageColorTemperature.Value}";
             currentLight.colorTemperature = args.lightEstimation.averageColorTemperature.Value;
         }
-         if (args.lightEstimation.colorCorrection.HasValue)
-        {
-            colorCorrectionValue.text = $"Color: {args.lightEstimation.colorCorrection.Value}";
-            currentLight.color = args.lightEstimation.colorCorrection.Value;
-        }
+         
+      //   if (args.lightEstimation.colorCorrection.HasValue)
+      //  {
+      //      colorCorrectionValue.text = $"Color: {args.lightEstimation.colorCorrection.Value}";
+      //      currentLight.color = args.lightEstimation.colorCorrection.Value;
+      //  }
     }
 
 
