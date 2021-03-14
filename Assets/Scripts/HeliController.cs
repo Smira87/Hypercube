@@ -42,37 +42,12 @@ public class HeliController : MonoBehaviour
   
  
     public void Move() {
-        //Rigidbody rb = _Drone.GetComponent<Rigidbody>();
-        //var newpos = rb.position - rb.transform.forward * joystick2.Horizontal * MoveSpd + rb.transform.right * joystick2.Vertical * MoveSpd + rb.transform.up * joystick.Vertical * MoveSpd;
-        //rb.MovePosition (newpos);
-        
-        
     
         Vector3 moveDirection = transform.right * joystick2.Vertical + transform.forward * (-joystick2.Horizontal);
 
         rb.AddForce(moveDirection * Time.deltaTime, ForceMode.VelocityChange);       
         
-        /*
-
-        if (joystick2.Vertical > 0){
-        rb.AddForce(rb.transform.right/100f);
-        }
-        if (joystick2.Vertical < 0){
-        rb.AddForce(-rb.transform.right/100f);
-        }
-        if (joystick2.Horizontal > 0){
-        rb.AddForce(-rb.transform.forward/100f);
-        }
-        if (joystick2.Horizontal < 0){
-        rb.AddForce(rb.transform.forward/100f);
-        }
-        if (joystick.Vertical < 0){
-        rb.AddForce(-rb.transform.up/100f);
-        }
-        if (joystick.Vertical > 0){
-        rb.AddForce(rb.transform.up/100f);
-        }
-        */
+    
 
         m_EulerAngleVelocity = new Vector3(0, joystick.Horizontal * 100f, 0);
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
@@ -80,8 +55,6 @@ public class HeliController : MonoBehaviour
         
         rb.MoveRotation(rb.rotation * deltaRotation);
         
-        //float turn = joystick.Horizontal;
-        //rb.AddTorque(Vector3.up * turn * torque);
         
     }
 
