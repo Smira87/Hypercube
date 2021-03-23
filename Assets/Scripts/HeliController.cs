@@ -60,8 +60,10 @@ public class HeliController : MonoBehaviour
     
         public void Tilting()
     {
-        float angleZ = -20 * joystick2.Vertical * 60.0f * Time.deltaTime;
-        float angleX = -20 * joystick2.Horizontal * 60.0f * Time.deltaTime;
+        var localVel = transform.InverseTransformDirection(rb.velocity);
+
+        float angleZ = -15 * localVel.x * 60.0f * Time.deltaTime;
+        float angleX = -15 * -localVel.z * 60.0f * Time.deltaTime;
 
         Vector3 rotation = _Model.transform.localRotation.eulerAngles;
 
