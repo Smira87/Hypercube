@@ -93,13 +93,11 @@ public class GameManager : MonoBehaviour
     yield return new WaitForSecondsRealtime(x);
 
    sh.StopWorks();
-
-        git branch -M main
 }
 
     void UpdateAR()
     {
-        if (!heliPlaced) {
+
             Vector2 positionScreenSpace = Camera.current.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
             _RaycastManager.Raycast(positionScreenSpace, _HitRelult, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinBounds);
             if (_HitRelult.Count > 0)
@@ -114,9 +112,9 @@ public class GameManager : MonoBehaviour
                     plane.SetActive(true);
                 }
             }
-        }
-
     }
+
+ 
     void EventOnClickFlyButton()
     {
             
@@ -126,8 +124,10 @@ public class GameManager : MonoBehaviour
             _FlyButton.gameObject.SetActive(false);
             sh.PlayStarts();
             StartCoroutine(waiter(2));
-            
-        
+            _PlaneManager.enabled = false;
+            EnablePlanes(false);
+
+
     }
     void EventOnClickLandButton()
         {
@@ -137,14 +137,21 @@ public class GameManager : MonoBehaviour
                 _LandButton.gameObject.SetActive(false);
                 _FlyButton.gameObject.SetActive(true);
                 _Controls.SetActive(false);
-
+                
                 _Drone.SetActive(false);
                 
                 plane.SetActive(false);
-            
+                _PlaneManager.enabled = true;
+                EnablePlanes(true);
+    }
+
+    private void EnablePlanes(bool value)
+    { 
+        foreach (var plane in _PlaneManager.trackables)
+        {
+            plane.gameObject.SetActive(value);
         }
-        
-       
+    }
     
 
     // Update is called once per frame
