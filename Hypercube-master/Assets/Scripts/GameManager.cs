@@ -94,28 +94,29 @@ public class GameManager : MonoBehaviour
 
    sh.StopWorks();
 
-   
-}   
+        git branch -M main
+}
 
     void UpdateAR()
     {
-        Vector2 positionScreenSpace = Camera.current.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
-        _RaycastManager.Raycast(positionScreenSpace, _HitRelult, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinBounds);
-        if(_HitRelult.Count > 0)
-        {
-            if(_PlaneManager.GetPlane(_HitRelult[0].trackableId).alignment == UnityEngine.XR.ARSubsystems.PlaneAlignment.HorizontalUp)
+        if (!heliPlaced) {
+            Vector2 positionScreenSpace = Camera.current.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+            _RaycastManager.Raycast(positionScreenSpace, _HitRelult, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinBounds);
+            if (_HitRelult.Count > 0)
             {
-                Pose pose = _HitRelult[0].pose;
-                
-                _Drone.transform.position = pose.position;
-                _Drone.SetActive(true);
-                plane.transform.position = pose.position;
-                plane.SetActive(true);
+                if (_PlaneManager.GetPlane(_HitRelult[0].trackableId).alignment == UnityEngine.XR.ARSubsystems.PlaneAlignment.HorizontalUp)
+                {
+                    Pose pose = _HitRelult[0].pose;
+
+                    _Drone.transform.position = pose.position;
+                    _Drone.SetActive(true);
+                    plane.transform.position = pose.position;
+                    plane.SetActive(true);
+                }
             }
         }
-    }
 
-    
+    }
     void EventOnClickFlyButton()
     {
             
