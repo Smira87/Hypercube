@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
             
             heliPlaced = true;
             heliControlls.Works();
+            
             _LandButton.gameObject.SetActive(true);
             _FlyButton.gameObject.SetActive(false);
             sh.PlayStarts();

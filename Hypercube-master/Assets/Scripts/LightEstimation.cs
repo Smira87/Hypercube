@@ -8,11 +8,6 @@ public class LightEstimation : MonoBehaviour
 
     public ARCameraManager arCameraManager;
 
-    public Text brightnessValue;
-
-    public Text tempValue;
-
-    public Text colorCorrectionValue;
 
     private Light currentLight;
 
@@ -36,12 +31,12 @@ public class LightEstimation : MonoBehaviour
     {
         if (args.lightEstimation.averageBrightness.HasValue)
         {
-            brightnessValue.text = $"Brighntess: {args.lightEstimation.averageBrightness.Value}";
+            //brightnessValue.text = $"Brighntess: {args.lightEstimation.averageBrightness.Value}";
             currentLight.intensity = args.lightEstimation.averageBrightness.Value;
         }
          if (args.lightEstimation.averageColorTemperature.HasValue)
         {
-            tempValue.text = $"Temp: {args.lightEstimation.averageColorTemperature.Value}";
+            //tempValue.text = $"Temp: {args.lightEstimation.averageColorTemperature.Value}";
             currentLight.colorTemperature = args.lightEstimation.averageColorTemperature.Value;
         }
          

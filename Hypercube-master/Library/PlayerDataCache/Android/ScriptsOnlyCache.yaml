@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - FixedJoystick
     - GameManager
     - HeliController
+    - LightEstimation
     - SoundHandler
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -113,6 +114,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3472}
     - Class: 114
       Script: {instanceID: 3476}
+    - Class: 114
+      Script: {instanceID: 3664}
     - Class: 114
       Script: {instanceID: 3912}
     - Class: 114
@@ -582,7 +585,7 @@ ScriptsOnlyBuild:
     className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
-      Hash: 4e502f56d00b8a82b817c73ccf6ea97e
+      Hash: d83be3879cf1c991d6988c7fa17d2c4a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LightEstimation
